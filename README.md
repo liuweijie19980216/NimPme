@@ -2,7 +2,7 @@
 
 The official implementation of Novel Instances Mining with Pseudo-Margin Evaluation for Few-Shot Object Detection
 <p align="center">
-<img src="https://www.dropbox.com/s/vq8kyvil7cynezy/fig2.png?dl=0" width="800px" alt="teaser">
+<img src="https://github.com/liuweijie19980216/NimPme/tree/master/imgs/fig2.png" width="800px" alt="teaser">
 </p>
 
 
