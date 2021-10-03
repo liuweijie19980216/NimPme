@@ -1,27 +1,18 @@
-# Few-Shot Object Detection (FsDet)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/ucbdrive/few-shot-object-detection.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ucbdrive/few-shot-object-detection/context:python)
+# Novel Instances Mining with Pseudo-Margin Evaluation for Few-Shot Object Detection (NimPme)
 
-FsDet contains the official few-shot object detection implementation of the ICML 2020 paper
-[Frustratingly Simple Few-Shot Object Detection](https://arxiv.org/abs/2003.06957).
-![TFA Figure](https://user-images.githubusercontent.com/7898443/76520006-698cc200-6438-11ea-864f-fd30b3d50cea.png)
+The official implementation of Novel Instances Mining with Pseudo-Margin Evaluation for Few-Shot Object Detection
 
-In addition to the benchmarks used by previous works, we introduce new benchmarks on three datasets: PASCAL VOC, COCO, and LVIS. We sample multiple groups of few-shot training examples for multiple runs of the experiments and report evaluation results on both the base classes and the novel classes. These are described in more detail in [Data Preparation](#data-preparation).
+![NimPme Figure](https://www.dropbox.com/s/vq8kyvil7cynezy/fig2.png?dl=0)
 
-We also provide benchmark results and pre-trained models for our two-stage fine-tuning approach (TFA). In TFA, we first train the entire object detector on the data-abundant base classes, and then only fine-tune the last layers of the detector on a small balanced training set. See [Models](#models) for our provided models and [Getting Started](#getting-started) for instructions on training and evaluation.
 
-FsDet is well-modularized so you can easily add your own datasets and models. The goal of this repository is to provide a general framework for few-shot object detection that can be used for future research.
 
-If you find this repository useful for your publications, please consider citing our paper.
 
-```angular2html
-@article{wang2020few,
-    title={Frustratingly Simple Few-Shot Object Detection},
-    author={Wang, Xin and Huang, Thomas E. and  Darrell, Trevor and Gonzalez, Joseph E and Yu, Fisher}
-    booktitle = {International Conference on Machine Learning (ICML)},
-    month = {July},
-    year = {2020}
-}
-```
+
+
+
+
+
+
 
 ## Updates
 The code has been upgraded to detectron2 v0.2.1.  If you need the original released code, please checkout the release [v0.1](https://github.com/ucbdrive/few-shot-object-detection/tags) in the tag.  
