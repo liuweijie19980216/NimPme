@@ -1,1 +1,0 @@
---num-gpus 1 --config-file configs/COCO-detection/finetune_pseudo_10shot.yaml --eval-only
