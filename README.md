@@ -1,26 +1,11 @@
 # Novel Instances Mining with Pseudo-Margin Evaluation for Few-Shot Object Detection (NimPme)
 
-The official implementation of Novel Instances Mining with Pseudo-Margin Evaluation for Few-Shot Object Detection
+The official implementation of **Novel Instances Mining with Pseudo-Margin Evaluation for Few-Shot Object Detection**
 <p align="center">
-<img src="https://github.com/liuweijie19980216/NimPme/tree/master/imgs/fig2.png" width="800px" alt="teaser">
+<img src="https://github.com/liuweijie19980216/NimPme/blob/master/imgs/fig2.png" width="800px" alt="teaser">
 </p>
 
-
-
-## Updates
-The code has been upgraded to detectron2 v0.2.1.  If you need the original released code, please checkout the release [v0.1](https://github.com/ucbdrive/few-shot-object-detection/tags) in the tag.  
-
-
-
-## Table of Contents
-- [Installation](#installation)
-- [Code Structure](#code-structure)
-- [Data Preparation](#data-preparation)
-- [Models](#models)
-- [Getting Started](#getting-started)
-
-
-## Installation
+The code is built on [TFA](https://github.com/ucbdrive/few-shot-object-detection)
 
 **Requirements**
 
@@ -29,58 +14,6 @@ The code has been upgraded to detectron2 v0.2.1.  If you need the original relea
 * [torchvision](https://github.com/pytorch/vision/) that matches the PyTorch installation
 * CUDA 10.0, 10.1, 10.2
 * GCC >= 4.9
-
-**Build FsDet**
-* Create a virtual environment.
-```angular2html
-python3 -m venv fsdet
-source fsdet/bin/activate
-```
-You can also use `conda` to create a new environment.
-```angular2html
-conda create --name fsdet
-conda activate fsdet
-```
-* Install Pytorch 1.6 with CUDA 10.2 
-```angular2html
-pip install torch torchvision
-```
-You can choose the Pytorch and CUDA version according to your machine.
-Just to make sure your Pytorch version matches the [prebuilt detectron2](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md#install-pre-built-detectron2-linux-only)
-* Install Detectron2 v0.2.1
-```angular2html
-python3 -m pip install detectron2 -f \
-  https://dl.fbaipublicfiles.com/detectron2/wheels/cu102/torch1.6/index.html
-```
-* Install other requirements. 
-```angular2html
-python3 -m pip install -r requirements.txt
-```
-
-## Code Structure
-- **configs**: Configuration files
-- **datasets**: Dataset files (see [Data Preparation](#data-preparation) for more details)
-- **fsdet**
-  - **checkpoint**: Checkpoint code.
-  - **config**: Configuration code and default configurations.
-  - **engine**: Contains training and evaluation loops and hooks.
-  - **layers**: Implementations of different layers used in models.
-  - **modeling**: Code for models, including backbones, proposal networks, and prediction heads.
-- **tools**
-  - **train_net.py**: Training script.
-  - **test_net.py**: Testing script.
-  - **ckpt_surgery.py**: Surgery on checkpoints.
-  - **run_experiments.py**: Running experiments across many seeds.
-  - **aggregate_seeds.py**: Aggregating results from many seeds.
-
-
-## Data Preparation
-We evaluate our models on three datasets:
-- [PASCAL VOC](http://host.robots.ox.ac.uk/pascal/VOC/): We use the train/val sets of PASCAL VOC 2007+2012 for training and the test set of PASCAL VOC 2007 for evaluation. We randomly split the 20 object classes into 15 base classes and 5 novel classes, and we consider 3 random splits. The splits can be found in [fsdet/data/datasets/builtin_meta.py](fsdet/data/datasets/builtin_meta.py).
-- [COCO](http://cocodataset.org/): We use COCO 2014 and extract 5k images from the val set for evaluation and use the rest for training. We use the 20 object classes that are the same with PASCAL VOC as novel classes and use the rest as base classes.
-- [LVIS](https://www.lvisdataset.org/): We treat the frequent and common classes as the base classes and the rare categories as the novel classes.
-
-See [datasets/README.md](datasets/README.md) for more details.
 
 
 ## Models
