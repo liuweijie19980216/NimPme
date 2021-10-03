@@ -1,16 +1,9 @@
 # Novel Instances Mining with Pseudo-Margin Evaluation for Few-Shot Object Detection (NimPme)
 
 The official implementation of Novel Instances Mining with Pseudo-Margin Evaluation for Few-Shot Object Detection
-
-![NimPme Figure](https://www.dropbox.com/s/vq8kyvil7cynezy/fig2.png?dl=0)
-
-
-
-
-
-
-
-
+<p align="center">
+<img src="https://www.dropbox.com/s/vq8kyvil7cynezy/fig2.png?dl=0" width="800px" alt="teaser">
+</p>
 
 
 
