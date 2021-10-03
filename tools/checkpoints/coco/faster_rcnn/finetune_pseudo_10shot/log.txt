@@ -1,0 +1,223 @@
+[08/31 20:11:10] detectron2 INFO: Rank of current process: 0. World size: 1
+[08/31 20:11:10] detectron2 INFO: Command line arguments: Namespace(config_file='/home/liuwj/Repository/few-shot-object-detection/configs/COCO-detection/feature_ft_pseudo_10shot.yaml', dist_url='tcp://127.0.0.1:50152', end_iter=-1, eval_all=False, eval_during_train=False, eval_iter=-1, eval_only=False, machine_rank=0, num_gpus=1, num_machines=1, opts=None, resume=False, start_iter=-1)
+[08/31 20:11:10] detectron2 INFO: Contents of args.config_file=/home/liuwj/Repository/few-shot-object-detection/configs/COCO-detection/feature_ft_pseudo_10shot.yaml:
+_BASE_: "../Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: 'checkpoints/coco/faster_rcnn/faster_rcnn_R_101_FPN_ft_all_10shot/model_final.pth'
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 101
+  ROI_HEADS:
+    NAME: "FeatureROIHeads"
+    NUM_CLASSES: 80
+    OUTPUT_LAYER: "CosineSimOutputLayers"
+    FREEZE_FEAT: True
+  BACKBONE:
+    FREEZE: True
+  PROPOSAL_GENERATOR:
+    FREEZE: True
+DATASETS:
+  TRAIN: ('coco_trainval_pseudo',)
+  TEST: ('coco_test_all',)
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 0.0001
+  STEPS: (20000,)
+  MAX_ITER: 60000
+  CHECKPOINT_PERIOD: 10000
+  WARMUP_ITERS: 200
+
+TEST:
+  AUG:
+    ENABLED: True
+  EVAL_PERIOD: 500
+OUTPUT_DIR: "checkpoints/coco/faster_rcnn/finetune_pseudo_10shot"
+[08/31 20:11:10] detectron2 INFO: Full config saved to /home/liuwj/Repository/few-shot-object-detection/tools/checkpoints/coco/faster_rcnn/finetune_pseudo_10shot/config.yaml
+[08/31 20:11:10] d2.utils.env INFO: Using a generated random seed 11872161
+[08/31 20:11:37] detectron2 INFO: Rank of current process: 0. World size: 1
+[08/31 20:11:37] detectron2 INFO: Command line arguments: Namespace(config_file='/home/liuwj/Repository/few-shot-object-detection/configs/COCO-detection/feature_ft_pseudo_10shot.yaml', dist_url='tcp://127.0.0.1:50152', end_iter=-1, eval_all=False, eval_during_train=False, eval_iter=-1, eval_only=False, machine_rank=0, num_gpus=1, num_machines=1, opts=None, resume=False, start_iter=-1)
+[08/31 20:11:37] detectron2 INFO: Contents of args.config_file=/home/liuwj/Repository/few-shot-object-detection/configs/COCO-detection/feature_ft_pseudo_10shot.yaml:
+_BASE_: "../Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: 'checkpoints/coco/faster_rcnn/faster_rcnn_R_101_FPN_ft_all_10shot/model_final.pth'
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 101
+  ROI_HEADS:
+    NAME: "FeatureROIHeads"
+    NUM_CLASSES: 80
+    OUTPUT_LAYER: "CosineSimOutputLayers"
+    FREEZE_FEAT: True
+  BACKBONE:
+    FREEZE: True
+  PROPOSAL_GENERATOR:
+    FREEZE: True
+DATASETS:
+  TRAIN: ('coco_trainval_pseudo',)
+  TEST: ('coco_test_all',)
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 0.0001
+  STEPS: (20000,)
+  MAX_ITER: 60000
+  CHECKPOINT_PERIOD: 10000
+  WARMUP_ITERS: 200
+
+TEST:
+  AUG:
+    ENABLED: True
+  EVAL_PERIOD: 500
+OUTPUT_DIR: "checkpoints/coco/faster_rcnn/finetune_pseudo_10shot"
+[08/31 20:11:37] detectron2 INFO: Full config saved to /home/liuwj/Repository/few-shot-object-detection/tools/checkpoints/coco/faster_rcnn/finetune_pseudo_10shot/config.yaml
+[08/31 20:11:37] d2.utils.env INFO: Using a generated random seed 38579779
+[08/31 20:13:07] detectron2 INFO: Rank of current process: 0. World size: 1
+[08/31 20:13:07] detectron2 INFO: Command line arguments: Namespace(config_file='/home/liuwj/Repository/few-shot-object-detection/configs/COCO-detection/feature_ft_pseudo_10shot.yaml', dist_url='tcp://127.0.0.1:50152', end_iter=-1, eval_all=False, eval_during_train=False, eval_iter=-1, eval_only=False, machine_rank=0, num_gpus=1, num_machines=1, opts=None, resume=False, start_iter=-1)
+[08/31 20:13:07] detectron2 INFO: Contents of args.config_file=/home/liuwj/Repository/few-shot-object-detection/configs/COCO-detection/feature_ft_pseudo_10shot.yaml:
+_BASE_: "../Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: 'checkpoints/coco/faster_rcnn/faster_rcnn_R_101_FPN_ft_all_10shot/model_final.pth'
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 101
+  ROI_HEADS:
+    NAME: "FeatureROIHeads"
+    NUM_CLASSES: 80
+    OUTPUT_LAYER: "CosineSimOutputLayers"
+    FREEZE_FEAT: True
+  BACKBONE:
+    FREEZE: True
+  PROPOSAL_GENERATOR:
+    FREEZE: True
+DATASETS:
+  TRAIN: ('coco_trainval_pseudo',)
+  TEST: ('coco_test_all',)
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 0.0001
+  STEPS: (20000,)
+  MAX_ITER: 60000
+  CHECKPOINT_PERIOD: 10000
+  WARMUP_ITERS: 200
+
+TEST:
+  AUG:
+    ENABLED: True
+  EVAL_PERIOD: 500
+OUTPUT_DIR: "checkpoints/coco/faster_rcnn/finetune_pseudo_10shot"
+[08/31 20:13:07] detectron2 INFO: Full config saved to /home/liuwj/Repository/few-shot-object-detection/tools/checkpoints/coco/faster_rcnn/finetune_pseudo_10shot/config.yaml
+[08/31 20:13:07] d2.utils.env INFO: Using a generated random seed 8691721
+[08/31 20:14:07] detectron2 INFO: Rank of current process: 0. World size: 1
+[08/31 20:14:07] detectron2 INFO: Command line arguments: Namespace(config_file='/home/liuwj/Repository/few-shot-object-detection/configs/COCO-detection/feature_ft_pseudo_10shot.yaml', dist_url='tcp://127.0.0.1:50152', end_iter=-1, eval_all=False, eval_during_train=False, eval_iter=-1, eval_only=False, machine_rank=0, num_gpus=1, num_machines=1, opts=None, resume=False, start_iter=-1)
+[08/31 20:14:07] detectron2 INFO: Contents of args.config_file=/home/liuwj/Repository/few-shot-object-detection/configs/COCO-detection/feature_ft_pseudo_10shot.yaml:
+_BASE_: "../Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: 'checkpoints/coco/faster_rcnn/faster_rcnn_R_101_FPN_ft_all_10shot/model_final.pth'
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 101
+  ROI_HEADS:
+    NAME: "FeatureROIHeads"
+    NUM_CLASSES: 80
+    OUTPUT_LAYER: "CosineSimOutputLayers"
+    FREEZE_FEAT: True
+  BACKBONE:
+    FREEZE: True
+  PROPOSAL_GENERATOR:
+    FREEZE: True
+DATASETS:
+  TRAIN: ('coco_trainval_pseudo',)
+  TEST: ('coco_test_all',)
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 0.0001
+  STEPS: (20000,)
+  MAX_ITER: 60000
+  CHECKPOINT_PERIOD: 10000
+  WARMUP_ITERS: 200
+
+TEST:
+  AUG:
+    ENABLED: True
+  EVAL_PERIOD: 500
+OUTPUT_DIR: "checkpoints/coco/faster_rcnn/finetune_pseudo_10shot"
+[08/31 20:14:07] detectron2 INFO: Full config saved to /home/liuwj/Repository/few-shot-object-detection/tools/checkpoints/coco/faster_rcnn/finetune_pseudo_10shot/config.yaml
+[08/31 20:14:07] d2.utils.env INFO: Using a generated random seed 9269955
+[08/31 20:15:37] detectron2 INFO: Rank of current process: 0. World size: 1
+[08/31 20:15:37] detectron2 INFO: Command line arguments: Namespace(config_file='/home/liuwj/Repository/few-shot-object-detection/configs/COCO-detection/feature_ft_pseudo_10shot.yaml', dist_url='tcp://127.0.0.1:50152', end_iter=-1, eval_all=False, eval_during_train=False, eval_iter=-1, eval_only=False, machine_rank=0, num_gpus=1, num_machines=1, opts=None, resume=False, start_iter=-1)
+[08/31 20:15:37] detectron2 INFO: Contents of args.config_file=/home/liuwj/Repository/few-shot-object-detection/configs/COCO-detection/feature_ft_pseudo_10shot.yaml:
+_BASE_: "../Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: 'checkpoints/coco/faster_rcnn/faster_rcnn_R_101_FPN_ft_all_10shot/model_final.pth'
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 101
+  ROI_HEADS:
+    NAME: "FeatureROIHeads"
+    NUM_CLASSES: 80
+    OUTPUT_LAYER: "CosineSimOutputLayers"
+    FREEZE_FEAT: True
+  BACKBONE:
+    FREEZE: True
+  PROPOSAL_GENERATOR:
+    FREEZE: True
+DATASETS:
+  TRAIN: ('coco_trainval_pseudo',)
+  TEST: ('coco_test_all',)
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 0.0001
+  STEPS: (20000,)
+  MAX_ITER: 60000
+  CHECKPOINT_PERIOD: 10000
+  WARMUP_ITERS: 200
+
+TEST:
+  AUG:
+    ENABLED: True
+  EVAL_PERIOD: 500
+OUTPUT_DIR: "checkpoints/coco/faster_rcnn/finetune_pseudo_10shot"
+[08/31 20:15:37] detectron2 INFO: Full config saved to /home/liuwj/Repository/few-shot-object-detection/tools/checkpoints/coco/faster_rcnn/finetune_pseudo_10shot/config.yaml
+[08/31 20:15:37] d2.utils.env INFO: Using a generated random seed 38881928
+[08/31 20:15:50] detectron2 INFO: Rank of current process: 0. World size: 1
+[08/31 20:15:50] detectron2 INFO: Command line arguments: Namespace(config_file='/home/liuwj/Repository/few-shot-object-detection/configs/COCO-detection/feature_ft_pseudo_10shot.yaml', dist_url='tcp://127.0.0.1:50152', end_iter=-1, eval_all=False, eval_during_train=False, eval_iter=-1, eval_only=False, machine_rank=0, num_gpus=1, num_machines=1, opts=None, resume=False, start_iter=-1)
+[08/31 20:15:50] detectron2 INFO: Contents of args.config_file=/home/liuwj/Repository/few-shot-object-detection/configs/COCO-detection/feature_ft_pseudo_10shot.yaml:
+_BASE_: "../Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: 'checkpoints/coco/faster_rcnn/faster_rcnn_R_101_FPN_ft_all_10shot/model_final.pth'
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 101
+  ROI_HEADS:
+    NAME: "FeatureROIHeads"
+    NUM_CLASSES: 80
+    OUTPUT_LAYER: "CosineSimOutputLayers"
+    FREEZE_FEAT: True
+  BACKBONE:
+    FREEZE: True
+  PROPOSAL_GENERATOR:
+    FREEZE: True
+DATASETS:
+  TRAIN: ('coco_trainval_pseudo',)
+  TEST: ('coco_test_all',)
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 0.0001
+  STEPS: (20000,)
+  MAX_ITER: 60000
+  CHECKPOINT_PERIOD: 10000
+  WARMUP_ITERS: 200
+
+TEST:
+  AUG:
+    ENABLED: True
+  EVAL_PERIOD: 500
+OUTPUT_DIR: "checkpoints/coco/faster_rcnn/finetune_pseudo_10shot"
+[08/31 20:15:50] detectron2 INFO: Full config saved to /home/liuwj/Repository/few-shot-object-detection/tools/checkpoints/coco/faster_rcnn/finetune_pseudo_10shot/config.yaml
+[08/31 20:15:50] d2.utils.env INFO: Using a generated random seed 52186216
+[08/31 20:15:53] fvcore.common.checkpoint INFO: [Checkpointer] Loading from checkpoints/coco/faster_rcnn/faster_rcnn_R_101_FPN_ft_all_10shot/model_final.pth ...

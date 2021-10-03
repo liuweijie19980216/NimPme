@@ -1,0 +1,34 @@
+_BASE_: "../Base-RCNN-FPN.yaml"
+MODEL:
+  META_ARCHITECTURE: "FeatureGeneralizedRCNN"
+  WEIGHTS: 'checkpoints/coco/faster_rcnn/faster_rcnn_R_101_FPN_ft_all_30shot/model_final.pth'
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 101
+  ROI_HEADS:
+    NAME: "FeatureROIHeads"
+    NUM_CLASSES: 80
+    OUTPUT_LAYER: "CosineSimOutputLayers"
+    FREEZE_FEAT: True
+  BACKBONE:
+    FREEZE: True
+  PROPOSAL_GENERATOR:
+    FREEZE: True
+DATASETS:
+  TRAIN: ('coco_trainval_pseudo_30',)
+  TEST: ('coco_test_all',)
+
+SOLVER:
+  IMS_PER_BATCH: 32
+
+  BASE_LR: 0.0001
+  STEPS: (1000,)
+  MAX_ITER: 10000
+  CHECKPOINT_PERIOD: 1000
+  WARMUP_ITERS: 100
+
+TEST:
+  AUG:
+    ENABLED: True
+  EVAL_PERIOD: 500
+OUTPUT_DIR: "checkpoints/coco/faster_rcnn/finetune_pseudo_30shot"
